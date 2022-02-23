@@ -106,7 +106,7 @@ export class Pipeline extends Construct {
           actionName: 'Source',
           owner: props.owner,
           repo: props.repo,
-          branch: 'production',
+          branch: 'main',
           oauthToken: this.secret,
           output: this.outputSources,
           trigger: GitHubTrigger.WEBHOOK,
