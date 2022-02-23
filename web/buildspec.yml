@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - cd web
+      - yarn install
+  build:
+    commands:
+      - yarn build
+      - cd build
+      - aws s3 sync . s3://$BUCKET_NAME
+      - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_ID --paths "/*"
+cache:
+  paths:
+    - './node_modules/**/*'

@@ -1,0 +1,45 @@
+{
+  "name": "infrastructure",
+  "version": "0.1.0",
+  "bin": {
+    "infrastructure": "bin/infrastructure.js"
+  },
+  "scripts": {
+    "dev:windows": "set DEBUG=app,error & tsnd --respawn --clear --notify server/index.ts",
+    "dev": "DEBUG=app,error tsnd --respawn --clear --notify server/index.ts",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest --verbose",
+    "test:watch": "jest --watch",
+    "cdk": "cdk",
+    "lint": "eslint --fix --ext .ts ."
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.10",
+    "@types/node": "10.17.27",
+    "@types/source-map-support": "^0.5.4",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
+    "aws-cdk": "2.13.0",
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "jest": "^26.4.2",
+    "prettier": "^2.5.1",
+    "ts-jest": "^26.2.0",
+    "ts-node": "^9.0.0",
+    "typescript": "~3.9.7"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.13.0",
+    "constructs": "^10.0.0",
+    "dotenv": "^16.0.0",
+    "source-map-support": "^0.5.16",
+    "uuid": "^8.3.2"
+  }
+}
